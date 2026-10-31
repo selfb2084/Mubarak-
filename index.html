@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUBARAK | Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>MUBARAK</h1>
+  <p>আপনার পছন্দের কেনাকাটার ঠিকানা</p>
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="পণ্য খুঁজুন...">
+    <button onclick="searchProducts()">Search</button>
+  </div>
+  <button class="cart-btn" onclick="showCart()">
+    🛒 Cart (<span id="cartCount">0</span>)
+  </button>
+</header>
+
+<section class="hero">
+  <h2>Welcome to MUBARAK</h2>
+  <p>সেরা পণ্য, সেরা দাম এবং বিশ্বস্ত কেনাকাটা</p>
+  <button onclick="document.getElementById('products').scrollIntoView()">
+    Shop Now
+  </button>
+</section>
+
+<main>
+  <h2>আমাদের পণ্যসমূহ</h2>
+  <div class="products" id="products">
+
+    <div class="product" data-name="Smart Watch">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Smart Watch">
+      <h3>Smart Watch</h3>
+      <p>৳ ১,২০০</p>
+      <button onclick="addToCart('Smart Watch',1200)">Add to Cart</button>
+    </div>
+
+    <div class="product" data-name="Headphone">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="Headphone">
+      <h3>Premium Headphone</h3>
+      <p>৳ ১,৫০০</p>
+      <button onclick="addToCart('Headphone',1500)">Add to Cart</button>
+    </div>
+
+    <div class="product" data-name="Shoes">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoes">
+      <h3>Sports Shoes</h3>
+      <p>৳ ২,০০০</p>
+      <button onclick="addToCart('Sports Shoes',2000)">Add to Cart</button>
+    </div>
+
+  </div>
+</main>
+
+<section class="cart-section" id="cartSection" hidden>
+  <h2>আপনার কার্ট</h2>
+  <div id="cartItems"></div>
+  <h3>সর্বমোট: ৳ <span id="total">0</span></h3>
+  <button onclick="checkout()">অর্ডার করুন</button>
+</section>
+
+<footer>
+  <h2>MUBARAK</h2>
+  <p>Thank you for shopping with us.</p>
+  <p>© 2026 MUBARAK. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
